@@ -1,6 +1,8 @@
 import { useState } from "react";
 import {routes} from "./routes";
 import { User } from "@clerk/nextjs/server";
+import { Accordion, AccordionSummary, Typography, AccordionDetails, LinearProgress } from "@mui/material";
+import Link from "next/link";
 
 interface SideMenuProps {
     user: User | null;
