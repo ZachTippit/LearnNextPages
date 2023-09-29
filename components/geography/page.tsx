@@ -2,11 +2,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import us from '../utils/us.json';
-import SubjectModal from '../components/SubjectModal';
-import GeographyCard from '../components/GeographyCard';
+import us from 'utils/us.json';
+import SubjectModal from 'components/SubjectModal';
+import GeographyCard from 'components/GeographyCard';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { getStateId } from '../utils/stateToId';
+import { getStateId } from 'utils/stateToId';
 
 const Page = () => {
     const ref = useRef<SVGSVGElement>(null);

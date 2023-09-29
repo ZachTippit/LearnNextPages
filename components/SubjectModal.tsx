@@ -1,4 +1,4 @@
-import { PeriodicElement } from '../utils/types';
+import { PeriodicElement } from 'utils/types';
 import Chat from "./periodic-table/Chat";
 import ElementData from './ElementData';
 
