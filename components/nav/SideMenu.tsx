@@ -3,7 +3,7 @@ import { Accordion, AccordionDetails, AccordionSummary, LinearProgress, Typograp
 import Link from "next/link";
 import { useState } from "react";
 import {routes} from "./routes";
-import type { User } from "@clerk/nextjs/api";
+import { User } from "@clerk/nextjs/server";
 
 interface SideMenuProps {
     user: User | null;
