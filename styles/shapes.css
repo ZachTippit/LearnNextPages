@@ -1,0 +1,11 @@
+.diamond-shape {
+    border: 1px solid #000;
+    background: white;
+    height: 60px;
+    text-align: center;
+    transform:rotate(45deg);
+      width:60px;
+  }
+  .diamond-shape > p {
+    transform:rotate(-45deg);
+  }
