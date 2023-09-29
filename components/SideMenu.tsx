@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {routes} from "./routes";
+import { User } from "@clerk/nextjs/server";
 
 interface SideMenuProps {
     user: User | null;
