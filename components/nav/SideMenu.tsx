@@ -6,7 +6,7 @@ import {routes} from "./routes";
 import { User } from "@clerk/nextjs/server";
 
 interface SideMenuProps {
-    user: User | null;
+    user: any;
     isOpen: boolean;
 }
 
