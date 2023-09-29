@@ -47,7 +47,6 @@ const Page = () => {
 
   useEffect(() => {
     if (ref.current) {
-      console.log('triggered')
       const { innerWidth } = window;
         const screenHeight = innerWidth * 0.6;
       const width = innerWidth;

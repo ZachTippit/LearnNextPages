@@ -25,7 +25,7 @@ export default async function handler(
         .select('chemistry_level')
         .eq('user_id', userId)
 
-    console.log('CHEM DATA 1: ', data)
+    console.log('CHEM DATA: ', data)
 
   return res.status(200).json(data);
 }
