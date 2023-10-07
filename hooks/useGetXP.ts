@@ -8,7 +8,7 @@ const getExperience = async (url) => {
     .then((res) => res.json())
 }
 
-const useGetXP = (xpType: string) => {
+const useGetXP = () => {
     const { data, error, isLoading, mutate } = useSWR('/api/getXP', getExperience, 
         {
             onSuccess: (data, key, config) => {

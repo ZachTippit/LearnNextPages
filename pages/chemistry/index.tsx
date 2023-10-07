@@ -12,16 +12,26 @@ const updateChemLevel = async (userId, updatedLevel) => {
     const result = await response.json();
     return result;
 }
+
+const updateProgression = async (progression) => {
+
+    const response = await fetch('/api/updateProgression', {
+      method: 'POST',
+      body: JSON.stringify(progression)
+    });
+    const result = await response.json();
+    return result;
+}
     
 const Chemistry = () => {
       
   const { isLoaded, userId, sessionId, getToken } = useAuth();
-  const toRetrieve = 'chemistry_experience'
 
-  const { xp: levelData, isLoading: isLoadingXP, isError, mutate: getXP } = useGetXP(toRetrieve);
+  const { xp: levelData, isLoading: isLoadingXP, isError, mutate: getXP } = useGetXP();
 
-  const handleClick = () => {
-    updateChemLevel(userId, levelData[0][toRetrieve] + 1);
+  const handleClick = (progressionMetric, amount) => {
+    console.log(progressionMetric, levelData[0][progressionMetric], amount)
+    updateProgression({[progressionMetric]: levelData[0][progressionMetric] + amount});
     getXP();
   }
   
@@ -41,13 +51,13 @@ const Chemistry = () => {
           </div>
           <button 
             className='w-40 h-20 mx-0 bg-slate-100 drop-shadow rounded-lg'
-            onClick={() => handleClick()}
+            onClick={() => handleClick('chemistry_experience', 10)}
           >
             Add Experience: {Boolean(levelData) ? levelData[0]['chemistry_experience'] : '0'}
           </button>
           <button 
             className='w-40 h-20 mx-0 bg-slate-100 drop-shadow rounded-lg'
-            onClick={() => handleClick()}
+            onClick={() => handleClick('chemistry_level', 1)}
           >
             Add Level: {Boolean(levelData) ? levelData[0]['chemistry_level'] : '0'}
           </button>
