@@ -19,3 +19,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.chemistry {
+  background-color: #eef7c8;
+}
+
+.geography {
+  background-color: #a5daa3;
+}
+
+.physics {
+  background-color: #cfedf4;
+}
+
+.astronomy {
+  background-color: #cab4cd;
+}

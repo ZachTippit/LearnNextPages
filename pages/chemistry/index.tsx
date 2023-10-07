@@ -29,28 +29,30 @@ const Chemistry = () => {
     return null;
   }
   
+  console.log('levelData', levelData)
+
   return (
     <>
       <SignedIn>
-        <div className='w-full h-screen bg-yellow-100 flex flex-col items-center'>
+        <div className='w-full h-screen chemistry flex flex-col items-center'>
           <div className='w-full'>
             <p className='text-left text-2xl'>Welcome {userId}</p>
               Hello, {userId} your current active session is {sessionId}
           </div>
           <button 
-            className='w-24 h-10 mx-0 bg-slate-100 drop-shadow rounded-lg'
+            className='w-40 h-20 mx-0 bg-slate-100 drop-shadow rounded-lg'
             onClick={() => handleClick()}
           >
-            Add Experience: {Boolean(levelData) ? levelData[0][toRetrieve] : '0'}
+            Add Experience: {Boolean(levelData) ? levelData[0]['chemistry_experience'] : '0'}
           </button>
           <button 
-            className='w-24 h-10 mx-0 bg-slate-100 drop-shadow rounded-lg'
+            className='w-40 h-20 mx-0 bg-slate-100 drop-shadow rounded-lg'
             onClick={() => handleClick()}
           >
-            Add Level: {Boolean(levelData) ? levelData[0][toRetrieve] : '0'}
+            Add Level: {Boolean(levelData) ? levelData[0]['chemistry_level'] : '0'}
           </button>
           {/* {showToast()} */}
-          <Link href='/periodic-table'>
+          <Link href='/chemistry/periodic-table'>
             <div className='w-40 h-20 drop-shadow bg-white flex items-center justify-center rounded-lg'>
               <p>Periodic Table</p>
             </div>

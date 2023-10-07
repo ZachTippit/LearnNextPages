@@ -20,7 +20,7 @@ const Page = () => {
     }
 
     return (
-        <div className='mt-8'> 
+        <div className='pt-8 chemistry'> 
             <SignedIn>
                 <PeriodicTable elementSelect={onElementSelect}/>
                 {isCardModalOpen && selectedElement !== null &&

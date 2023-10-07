@@ -2,9 +2,9 @@
 import { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
-import us from '../utils/us.json';
-import SubjectModal from '../components/SubjectModal';
-import GeographyCard from '../components/GeographyCard';
+import us from '../../utils/us.json';
+import SubjectModal from '../../components/SubjectModal';
+import GeographyCard from '../../components/GeographyCard';
 import { getStateId } from 'utils/stateToId';
 import { SignIn, SignedIn, SignedOut } from '@clerk/nextjs';
 
@@ -136,7 +136,7 @@ const Page = () => {
   const isSuccess = true;
 
   return (
-    <div>
+    <div className='geography'>
         <SignedIn>
             <svg ref={ref}></svg>
             {isCardModalOpen && location !== null &&

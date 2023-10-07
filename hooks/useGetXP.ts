@@ -1,19 +1,18 @@
 import toast from "react-hot-toast";
 import useSWR from "swr";
 
-const getChemLevel = async ([url, xpType]) => {
-    console.log('XP TYPE: ', xpType)
-    return fetch(`/api/getChemistryLevel?xpType=${xpType}`, {
+const getExperience = async (url) => {
+    return fetch(`/api/getXP`, {
         method: 'GET',
         })
     .then((res) => res.json())
 }
 
 const useGetXP = (xpType: string) => {
-    const { data, error, isLoading, mutate } = useSWR(['/api/getChemistryLevel', xpType], getChemLevel, 
+    const { data, error, isLoading, mutate } = useSWR('/api/getXP', getExperience, 
         {
             onSuccess: (data, key, config) => {
-                toast.success('🦄 Chemistry XP Added!', {
+                toast.success('🦄 Experience retrieved!', {
                     duration: 2000,
                     position: 'top-right',
                   });
