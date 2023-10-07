@@ -1,65 +1,41 @@
-<p align="center">
-  <a href="https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter" target="_blank" align="center">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./docs/clerk-logo-dark.png">
-      <img src="./docs/clerk-logo-light.png" height="64">
-    </picture>
-  </a>
-  <br />
-</p>
+# Welcome to EduGPT
 
-# Clerk Next.js Starter
+EduGPT is a science and natural history education app incorporating gameified elements with an AI tutor built in. Currently, the focus is on building out the Chemistry learning tree, however there will be a focus on Geography, Physics and Astronomy modules as the app develops.
 
-This example shows how to use [Clerk](https://www.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter) with Next.js. The example Next.js application features adding sign up, sign in, profile management, and an authenticated API route.
+The initial stage of development will be centered around building out the visual style of the learning modules.
 
-[![chat on Discord](https://img.shields.io/discord/856971667393609759.svg?logo=discord)](https://discord.com/invite/b5rXHjAg7A)
-[![documentation](https://img.shields.io/badge/documentation-clerk-green.svg)](https://docs.clerk.dev)
-[![twitter](https://img.shields.io/twitter/follow/ClerkDev?style=social)](https://twitter.com/intent/follow?screen_name=ClerkDev)
+## Where is this deployed?
 
----
+Currently, EduGPT is hosted on Vercel and does not have its own domain. This will change in the future as we expect to bring on beta users.
 
-**Clerk is Hiring!**
+## What technologies does EduGPT use?
 
-Would you like to work on Open Source software and help maintain this repository? [Apply today!](https://apply.workable.com/clerk-dev/)
+EduGPT leverages the following:
 
----
+#### Front End
 
-## Demo
+Next.js (Pages Router)
+Clerk (Authentication)
+Supabase (Database)
+SWR (Next API hooks)
+<!-- RTL (Testing)
+Cypress (e2e Testing) -->
+Bun (Build manager)
 
-A hosted demo of this example is available at [clerk-nextjs-example.vercel.app](https://clerk-nextjs-example.vercel.app/)
+#### Back End/Dev Ops
 
-### Deploy your own
+Supabase (Database)
+Vercel (Hosting)
+Bun (Javascript Build Manager)
 
-Deploy the example directly from GitHub using [Vercel](https://vercel.com):
+## Running the project locally
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/clerkinc/clerk-nextjs-starter&integration-ids=oac_7uYNbc9CdDAZmNqbt3LEkO3a)
+To run EduGPT on your machine, you need to:
 
-## Running the starter
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example https://github.com/clerkinc/clerk-nextjs-starter
-# or
-yarn create next-app --example https://github.com/clerkinc/clerk-nextjs-starter
-```
-
-To run the example locally you need to:
-
-1. Sign up for a Clerk account at https://clerk.dev.
-2. Go to [Clerk's dashboard](https://dashboard.clerk.dev/?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter) and create an application.
-3. Set the required Clerk environment variables as shown in [the example env file](./.env.local.sample).
-4. `npm install` the required dependencies.
-5. `npm run dev` to launch the development server.
-
-## Learn more
-
-To learn more about Clerk and Next.js, check out the following resources:
-
-- [Quickstart: Get started with Next.js and Clerk](https://clerk.dev/docs/quickstarts/get-started-with-nextjs?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter)
-- [Clerk Documentation](https://clerk.dev/docs?utm_source=github&utm_medium=starter_repos&utm_campaign=nextjs_starter)
-- [Next.js Documentation](https://nextjs.org/docs)
+1. Set the required environment variables (reach out to the repo admin) as shown in [the example env file](./.env.local.sample).
+2. `npm install` the required dependencies.
+3. `npm run dev` to launch the development server.
 
 ## Contact
 
-If you need support or have anything you would like to ask, please reach out in our [Discord channel](https://discord.com/invite/b5rXHjAg7A). We'd love to chat!
+If you need support or have anything you would like to ask, please reach out to the repo admin. I'd love to chat! :)

@@ -33,3 +33,14 @@ export default async function handler(
 
   return res.status(200).json({});
 }
+
+import toast from "react-hot-toast";
+import useSWR from "swr";
+
+const getChemLevel = async ([url, xpType]) => {
+    console.log('XP TYPE: ', xpType)
+    return fetch(`/api/getChemistryLevel?xpType=${xpType}`, {
+        method: 'GET',
+        })
+    .then((res) => res.json())
+}

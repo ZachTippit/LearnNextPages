@@ -3,13 +3,13 @@ import { type SupabaseClient, createClient } from "@supabase/supabase-js";
 
 export const getSupabase = async (
     request: any,
-  ): Promise<SupabaseClient | null> => {
+  ) => {
     try {
       const { userId, getToken } = await getAuth(request)
       if (!userId) return null
       
-      const secret = await getToken({ template: 'supabase' })
-      if (!secret) return null
+      const token = await getToken({ template: 'supabase' })
+      if (!token) return null
   
       const supabaseUrl = process.env.SUPABASE_URL || ''
       const supabaseKey = process.env.SUPABASE_ANON_KEY || ''
@@ -17,14 +17,15 @@ export const getSupabase = async (
       const client = createClient(supabaseUrl, supabaseKey, {
         global: {
           headers: {
-            Authorization: `Bearer ${secret}`,
+            Authorization: `Bearer ${token}`,
           },
         },
       })
-      console.log('success!')
-      return client
+
+      console.log('CLIENT: ', client)
+      console.log('USERID: ', userId)
+      return {client, userId};
     } catch (error) {
-      console.error(error)
       return null
     }
   }

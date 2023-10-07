@@ -6,18 +6,18 @@ import Head from "next/head";
 import Script from "next/script";
 import Layout from "/components/Layout";
 import {
-  HydrationBoundary,
+  Hydrate,
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query';
 
 const MyApp = ({ Component, pageProps }) => {
 
-  const [queryClient] = useState(() => new QueryClient())
+  const [queryClient] = useState(() => new QueryClient());
   
   return (
     <QueryClientProvider client={queryClient}>
-      <HydrationBoundary>
+      <Hydrate state={pageProps.dehydratedState}>
         <ClerkProvider {...pageProps}>
           <Head>
             <title>Clerk + Next.js Starter</title>
@@ -31,7 +31,7 @@ const MyApp = ({ Component, pageProps }) => {
               <Component {...pageProps} />
           </Layout>
         </ClerkProvider>
-      </HydrationBoundary>
+      </Hydrate>
     </QueryClientProvider>
   );
 };

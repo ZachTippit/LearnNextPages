@@ -6,6 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const { xpType } = req.query;
   const { userId, getToken } = getAuth(req);
   const token = await getToken({ template: "supabase" });
   
@@ -22,7 +23,7 @@ export default async function handler(
 
     const { data, error } = await client
         .from('user-level-progression')
-        .select('chemistry_level')
+        .select(xpType as string)
         .eq('user_id', userId)
 
     console.log('CHEM DATA: ', data)

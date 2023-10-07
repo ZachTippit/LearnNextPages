@@ -1,18 +1,18 @@
 import axios from 'axios'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from '@tanstack/react-query';
 
-const fetchPosts = async (limit = 10) => {
-  const parsed = await axios('https://jsonplaceholder.typicode.com/posts').then(
-    (res) => res.data
-  )
-  return parsed.filter((x) => x.id <= limit)
+const updateXP = async (xp) => {
+  return fetch('/api/updateChemistryLevel', {
+    method: 'POST',
+    body: JSON.stringify({chemistry_level: xp})
+  }).then((res) => res.json());
 }
 
-const usePosts = (limit) => {
+const useUpdateXP = (xp) => {
   return useQuery({
-    queryKey: ['posts', limit],
-    queryFn: () => fetchPosts(limit),
+    queryKey: ['updateXP', xp],
+    queryFn: () => updateXP(xp),
   })
 }
 
-export { usePosts, fetchPosts }
+export { useUpdateXP }
